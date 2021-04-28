@@ -1,10 +1,13 @@
 import '../stylesheets/WeatherResults.css';
 
-function WeatherResults() {
+function WeatherResults(props) {
+
     return (
       <div className="Results-box">
-          <h2>Esta es la ciudad</h2>
-          <p>Lorem ipsum</p>
+          <h2>{props.weather.name}</h2>
+          <h3>{props.weather.country}</h3>
+          <p>{props.weather.main}</p>
+          <span>{props.weather.temp}</span>
       </div>
     );
   }

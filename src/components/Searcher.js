@@ -1,13 +1,29 @@
+import React from 'react';
 import '../stylesheets/Searcher.css';
 
-function Searcher() {
+function Searcher(props) {
+
+    const handleFilterChild = (ev) => {
+      props.handleFilter(ev.target.value);
+      console.log(ev.target.value);
+    };
+
+    const submitHandler = (ev) => {
+      ev.preventDefault();
+      props.getDataFromApi();
+    };
+
     return (
-      <div className="Searcher-box">
+      <form className="Searcher-box" onSubmit={submitHandler}>
           <label htmlFor="city">
-          <input id="city" type="text" placeholder="Enter a city"></input>
+          <input id="city"
+                 type="text" 
+                 placeholder="Enter a city"
+                 value={props.city}
+                 onChange={handleFilterChild}></input>
           </label>
           <button type="submit">Buscar</button>
-      </div>
+      </form>
     );
   }
   
