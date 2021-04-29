@@ -1,4 +1,3 @@
-import React from 'react';
 import '../stylesheets/Searcher.css';
 
 function Searcher(props) {
@@ -16,13 +15,14 @@ function Searcher(props) {
     return (
       <form className="Searcher-box" onSubmit={submitHandler}>
           <label htmlFor="city">
-          <input id="city"
+          <input className="Input-box"
+                  id="city"
                  type="text" 
                  placeholder="Enter a city"
                  value={props.city}
                  onChange={handleFilterChild}></input>
           </label>
-          <button type="submit">Buscar</button>
+          <button className="Searcher-button" type="submit"><i className="fa fa-search fa-2x"></i></button>
       </form>
     );
   }

@@ -27,7 +27,7 @@ function App() {
           name: data.name,
           country: data.sys.country,
           main: data.weather[0].main,
-          temp: data.main.temp
+          temp: data.main.temp.toFixed(0)
         }
         setWeather(result);
         setCity("");
