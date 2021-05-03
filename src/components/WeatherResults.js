@@ -30,7 +30,7 @@ function WeatherResults(props) {
         </div>
         <div className="Info-weather">
           <p>{showedImage}</p>
-          <span>Temp: {props.weather.temp} ºC</span>
+          <span>{props.weather.temp} ºC</span>
         </div>
       </div>
     );
